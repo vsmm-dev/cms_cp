@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration.
  *
@@ -56,6 +57,10 @@ return static function (RouteBuilder $routes) {
          * ...and connect the rest of 'Pages' controller's URLs.
          */
         $builder->connect('/pages/*', 'Pages::display');
+
+        $builder->scope('/articles', function (RouteBuilder $builder) {
+            $builder->connect('/tagged/*', ['controller' => 'Articles', 'action' => 'tags']);
+        });
 
         /*
          * Connect catchall routes for all controllers.
