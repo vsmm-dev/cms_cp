@@ -17,9 +17,12 @@ class ArticlesController extends AppController
         $this->set(compact('articles'));
     }
 
-    public function view($slug)
+    public function view($slug = null)
     {
-        $article = $this->Articles->findBySlug($slug)->firstOrFail();
+        $article = $this->Articles
+            ->findBySlug($slug)
+            ->contain('Tags')
+            ->firstOrFail();
         $this->set(compact('article'));
     }
 
@@ -75,7 +78,7 @@ class ArticlesController extends AppController
         }
     }
 
-    public function tags()
+    public function tags(...$tags)
     {
         // The 'pass' key is provided by CakePHP and contains all
         // the passed URL path segments in the request.
