@@ -1,21 +1,21 @@
 <!-- File: templates/Articles/index.php -->
-<h1>Articles</h1>
-<table>
+<h1>Articlessss</h1>
+<table class="table-fixed rounded bg-gray-300 border-separate border-spacing-2 border border-slate-500">
     <tr>
-        <th>Title</th>
-        <th>Created</th>
-        <th>Action</th>
+        <th class="rounded border border-slate-600">Title</th>
+        <th class="rounded border border-slate-600">Created</th>
+        <th class="rounded border border-slate-600">Action</th>
     </tr>
     <!-- Here is where we iterate through our $articles query object, printing out article info -->
     <?php foreach ($articles as $article) : ?>
         <tr>
-            <td>
+            <td class="rounded border border-slate-700">
                 <?= $this->Html->link($article->title, ['action' => 'view', $article->slug]) ?>
             </td>
-            <td>
+            <td class="rounded border border-slate-700">
                 <?= $article->created->format(DATE_RFC850) ?>
             </td>
-            <td>
+            <td class="rounded border border-slate-700">
                 <?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?>
                 <?= $this->Form->postLink(
                     'Delete',

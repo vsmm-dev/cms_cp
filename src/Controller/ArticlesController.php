@@ -15,6 +15,7 @@ class ArticlesController extends AppController
     {
         $this->Authorization->skipAuthorization();
         $articles = $this->Paginator->paginate($this->Articles->find());
+        // pj($articles);
         $this->set(compact('articles'));
     }
 

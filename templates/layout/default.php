@@ -30,7 +30,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    <?= $this->Html->css(['normalize.min', 'style', 'cake']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -51,8 +51,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </a>
         </div>
     </nav>
-    <main class="main">
-        <div class="container">
+    <main class="flex items-center justify-center h-screen">
+        <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
